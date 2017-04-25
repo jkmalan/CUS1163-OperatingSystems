@@ -1,0 +1,16 @@
+Added: 744
+Exception in thread "Thread-1" Exception in thread "Thread-0" java.lang.NullPointerException
+Added: 409
+Removed: 409
+	at java.util.LinkedList.unlink(LinkedList.java:211)
+	at java.util.LinkedList.remove(LinkedList.java:526)
+	at com.jkmalan.Multithreading.LinkedList.LinkedListThread.run(LinkedListThread.java:28)
+	at com.jkmalan.Multithreading.LinkedList.LinkedListThread.run(LinkedListThread.java:32)
+	at com.jkmalan.Multithreading.LinkedList.LinkedListThread.run(LinkedListThread.java:32)
+	at java.lang.Thread.run(Thread.java:745)
+java.lang.NullPointerException
+	at java.util.LinkedList.unlink(LinkedList.java:211)
+	at java.util.LinkedList.remove(LinkedList.java:526)
+	at com.jkmalan.Multithreading.LinkedList.LinkedListThread.run(LinkedListThread.java:28)
+	at com.jkmalan.Multithreading.LinkedList.LinkedListThread.run(LinkedListThread.java:32)
+	at java.lang.Thread.run(Thread.java:745)
