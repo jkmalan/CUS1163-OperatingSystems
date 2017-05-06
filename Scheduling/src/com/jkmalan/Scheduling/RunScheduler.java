@@ -23,12 +23,25 @@
 */
 package com.jkmalan.Scheduling;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author jkmalan (aka John Malandrakis)
  */
 public class RunScheduler {
 
     public static void main(String[] args) {
+
+        List<Process> processes = new ArrayList<>();
+        processes.add(new Process(5, 8, 3, 2));
+        processes.add(new Process(10, 4, 5, 1));
+        processes.add(new Process(15, 9, 2, 5));
+
+        Scheduler scheduler = new Scheduler(processes);
+        scheduler.firstComeFirstServe();
+        scheduler.shortestJobFirst();
+        scheduler.priorityScheduling();
 
     }
 

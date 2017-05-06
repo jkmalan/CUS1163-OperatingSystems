@@ -23,6 +23,8 @@
 */
 package com.jkmalan.Scheduling;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -37,25 +39,50 @@ public class Scheduler {
     }
 
     public void firstComeFirstServe() {
-        int pCount = 0;
-
-        int pArrivalTime = 0;
-        int pWaitingTime = 0;
-        double pAvgWaitTime = 0;
-        double pAvgBurstTime = 0;
-
+        List<Process> processes = new ArrayList<>();
         for (Process p : processList) {
-            if (pCount == 0) {
-                p.getArrivalTime() = p.getArrivalTime();
-            }
+            processes.add(p);
         }
+
+        processes.sort(new Comparator<Process>() {
+            @Override
+            public int compare(Process one, Process two) {
+                return one.getArrivalTime() > two.getArrivalTime() ? -1 : (one.getArrivalTime() < two.getArrivalTime()) ? 1 : 0;
+            }
+        });
+
+
     }
 
     public void shortestJobFirst() {
+        List<Process> processes = new ArrayList<>();
+        for (Process p : processList) {
+            processes.add(p);
+        }
+
+        processes.sort(new Comparator<Process>() {
+            @Override
+            public int compare(Process one, Process two) {
+                return one.getBurstTime() > two.getBurstTime() ? -1 : (one.getBurstTime() < two.getBurstTime()) ? 1 : 0;
+            }
+        });
+
 
     }
 
     public void priorityScheduling() {
+        List<Process> processes = new ArrayList<>();
+        for (Process p : processList) {
+            processes.add(p);
+        }
+
+        processes.sort(new Comparator<Process>() {
+            @Override
+            public int compare(Process one, Process two) {
+                return one.getPriority() > two.getPriority() ? -1 : (one.getPriority() < two.getPriority()) ? 1 : 0;
+            }
+        });
+
 
     }
 
